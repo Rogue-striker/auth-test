@@ -3,13 +3,14 @@ const express = require('express');
 // Initialize Express
 const app = express();
 
+app.use(express.json());
 // Create GET request
 app.get('/', (req, res) => {
   res.send('Express on Vercel');
 });
 
 app.get('/auth', (req, res) => {
-  console.log(req.params);
+  console.log(req.query);
   res.send('ok');
 });
 
